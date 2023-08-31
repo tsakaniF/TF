@@ -48,7 +48,7 @@
             <button
                 class="btn btn-color-2"
                 
-                onclick="<a href="#about" onclick="toggleMenu()" /a>"
+                onclick="location.href='#about'"
             >dowload cv</button>
             
         </div>
@@ -63,34 +63,6 @@
    
    <section id="about">
     <p class="section__text__p1">Get To Know More</p>
-
-    <script>
-        async function generatePDF() {
-            document.getElementById("downloadButton").innerHTML = "Currently downloading, please wait";
-    
-            //Downloading code
-            var downloading = document.getElementById("whatToPrint");
-            var doc = new jsPDF('p', 'pt');
-    
-            await html2canvas(downloading, {
-                //allowTaint:true,
-                //useCORS: true,
-                //width: 550 
-            }).then((canvas) => {
-                //canvas (convert to PNG)
-                doc.addImage(canvas.toDataURL("image/png"), 'PNG', 5, 5, 550, 650);
-            })
-    
-            doc.save("Document.pdf");
-    
-            //End of downloading
-    
-            document.getElementById("downloadButton").innerHTML = "Click to download";
-        }
-    </script>
-    <div id="whatToPrint">
-       <!-- <img src="https://th.bing.com/th/id/OIP.wdkLi0wAUuLf5gdNFincPwHaEd?pid=ImgDet&rs=1" alt="">-->
-        <a href="javascript:generatePDF()" id="downloadButton"></a>
 
     <h1 class="title">Curriculum Vitae</h1>
     <div class="section-container">
